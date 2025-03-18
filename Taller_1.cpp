@@ -13,15 +13,15 @@ struct producto {
     producto *sig;
 };
 
-producto cabPro, *auxPro, *aux2Pro, *auxAn,*aux; /*declaración de apuntadores/
+producto cabPro, *auxPro, *aux2Pro, *auxAn,*aux; /*declaración de apuntadores */
 
 void registrar(){
-    auxPro = (struct producto ) malloc (sizeof(producto));/*pedimos tamaño para la estructura/
+    auxPro = (struct producto ) malloc (sizeof(producto)); /*pedimos tamaño para la estructura */
     cout<<"Ingrese el nombre del producto: " <<endl;
     cin>>auxPro->Nombre;
     cont++;
     auxPro->id=cont;
-/Una vez agregamos un nuevo producto este apunta a siguiente que es nada/
+/* Una vez agregamos un nuevo producto este apunta a siguiente que es nada */
     auxPro->sig = NULL;
    /Se ve si hay más, si no se ubica el recién ingresado como nuevo y si hay más se busca el último y se conecta al ultimo/
  if(!cabPro){
@@ -77,7 +77,7 @@ int idb;
         }else {
             cout<<"Producto no  encontrado. " <<endl;
         } 
-        /Está implementa la función para buscar con una semilla para así saber que se quiere modificar al final se guarda el nuevo del nodo/
+        /*Está implementa la función para buscar con una semilla para así saber que se quiere modificar al final se guarda el nuevo del nodo*/
 }
 
 
