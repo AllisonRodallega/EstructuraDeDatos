@@ -1,24 +1,30 @@
+/* Renteria Renteria Isabela*/
+/* Rodallega Cuellar Allison Ayana*/
+
 #include <iostream>
 #include <malloc.h>
 using namespace std;
 
-int cont=10230;
+int cont=10230; /* declaramos el contador para el id */
 
 struct producto {
     int id;
-    char Nombre[30];
+    char Nombre[30]; /se intentó usar string...no pudimos/
     producto *sig;
 };
 
-producto *cabPro, *auxPro, *aux2Pro, *auxAn,*aux;
+producto cabPro, *auxPro, *aux2Pro, *auxAn,*aux; /*declaración de apuntadores/
+
 void registrar(){
-    auxPro = (struct producto *) malloc (sizeof(producto));
+    auxPro = (struct producto ) malloc (sizeof(producto));/*pedimos tamaño para la estructura/
     cout<<"Ingrese el nombre del producto: " <<endl;
     cin>>auxPro->Nombre;
     cont++;
     auxPro->id=cont;
+/Una vez agregamos un nuevo producto este apunta a siguiente que es nada/
     auxPro->sig = NULL;
-    if(!cabPro){
+   /Se ve si hay más, si no se ubica el recién ingresado como nuevo y si hay más se busca el último y se conecta al ultimo/
+ if(!cabPro){
         cabPro = auxPro;
     } else {
         aux2Pro=cabPro;
@@ -28,12 +34,14 @@ void registrar(){
         aux2Pro->sig = auxPro;
     }
 }
+
 void mostrar(){
     auxPro=cabPro;
     while(auxPro!=NULL){
         cout<<"El producto es: " <<auxPro->Nombre<<endl<<"y su id es: " <<auxPro->id <<endl;
         auxPro = auxPro->sig;
     }
+/* En esta se usa un ciclo while para iterar sobre la estructura y se van representando cada uno de los nodos*/
 }
 void buscar() {
     int semilla;
@@ -50,6 +58,7 @@ void buscar() {
     } else {
         cout << "Producto no encontrado." << endl;
     }
+/* Funciona casi igual como la función de buscar pero con una semilla como condición, además de un if */
 }
 
 void modificar(){
@@ -68,7 +77,7 @@ int idb;
         }else {
             cout<<"Producto no  encontrado. " <<endl;
         } 
-        
+        /Está implementa la función para buscar con una semilla para así saber que se quiere modificar al final se guarda el nuevo del nodo/
 }
 
 
@@ -104,7 +113,8 @@ int c=0;
     c++;
     auxPro=auxPro->sig;
     }
-    cout<<"La cantidad de productos registrados es: "<<c <<endl;       
+    cout<<"La cantidad de productos registrados es: "<<c <q<endl;     
+/*Con un  while iterar sobre la  la estructura de nodos y usamos un contador que aumente 1 por cada producto */
 }
 
 void liberarMemoria() {
